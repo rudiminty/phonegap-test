@@ -40,3 +40,20 @@ var app = {
         completeElem.className = completeElem.className.split('hide').join('');
     }
 };
+
+function externalCall() {
+	alert('Before Ajax Call');
+	new Ajax.Request('http://mail.onlineintelligence.co.za/RiskManager_PSI/index.jsp', {
+        method: 'get',
+        parameters: {
+            q: 'Online+Intelligence'
+        },
+		onComplete: function(response) {
+			alert('Ajax Response Status: ' + response.status);
+        },
+		onFailure : function() {
+			alert('Ajax Request failed...');
+		}
+    });
+	alert('After Ajax Call');
+}
