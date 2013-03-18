@@ -20,8 +20,9 @@
                         if (deviceLogo) {
                                 deviceLogo.update('Rudi Minty v1.1');
                         }
-                        var timer = setTimeout('externalCall()', 5000);
+//                        var timer = setTimeout('externalCall()', 5000);
                         app.initialize();
+                        start();
                 });
         </script>
 
@@ -35,6 +36,10 @@
             <div id="deviceready">
                 <p class="status pending blink">Connecting to Device</p>
                 <p class="status complete blink hide">Device is Ready</p>
+            </div>
+            <div id="save-div">
+                <input type="text" value="default" id="save-value"/>
+                <input type="button" id="save-button" value="Save"/>
             </div>
         </div>
     </body>

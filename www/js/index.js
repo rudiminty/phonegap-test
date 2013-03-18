@@ -60,7 +60,17 @@ function externalCall() {
 }
 
 var start = function() {
+    alert('Starting.....');
     var dao = new DAO();
+    alert('Installing...');
     dao.install();
+    alert('Querying...');
     dao.query();
+    alert('Observing button...');
+    Event.observe($('save-button'), 'click', function() {
+        alert('Updating...');
+        dao.update();
+        alert('Querying...');
+        dao.query();
+    });
 };
